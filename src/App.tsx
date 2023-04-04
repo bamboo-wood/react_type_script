@@ -3,6 +3,13 @@ import { useState } from "react";
 import { Todo } from "./components/Todo";
 import { Text } from "./components/Text";
 import { TodoType } from "./types/Todo";
+import { UserProfile } from "./components/UserProfile";
+import { User } from "./types/User";
+
+const user: User = {
+  name: "aaa",
+  // hobbies: ["aaa", "bbb"],
+};
 
 function App() {
   const [todos, setTodos] = useState<Array<TodoType>>([]);
@@ -23,6 +30,8 @@ function App() {
       <Text color="red" fontSize="18px">
         react * typescript
       </Text>
+
+      <UserProfile user={user} />
 
       <button onClick={onClickFetchData}>fetch date</button>
       {todos.map((todo) => (
